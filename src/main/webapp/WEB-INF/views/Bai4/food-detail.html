@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Chi tiết Món Ăn (Bài 4)</title>
+</head>
+<body>
+<h2>Chi Tiết Món Ăn (Sau khi Redirect)</h2>
+
+<div th:if="${successMessage}" style="color: green; font-weight: bold;">
+    <p th:text="${successMessage}"></p>
+</div>
+
+<div th:if="${foodDetail != null}">
+    <ul>
+        <li><b>ID Món:</b> <span th:text="${foodDetail.id}"></span></li>
+        <li><b>Tên món:</b> <span th:text="${foodDetail.name}"></span></li>
+        <li><b>Giá tiền:</b> <span th:text="${foodDetail.price}"></span> VNĐ</li>
+        <li><b>Danh mục:</b> <span th:text="${foodDetail.category}"></span></li>
+        <li><b>Tên file đã đổi (UUID):</b> <span th:text="${foodDetail.imageName}"></span></li>
+        <li style="color: blue;"><b>Đường dẫn vật lý:</b> <span th:text="${foodDetail.physicalPath}"></span></li>
+    </ul>
+    <br>
+    <a href="/bai4/food/add">← Quay lại thêm món khác</a>
+</div>
+
+<div th:if="${foodDetail == null}">
+    <p style="color: red;">Không tìm thấy thông tin món ăn!</p>
+</div>
+
+</body>
+</html>
