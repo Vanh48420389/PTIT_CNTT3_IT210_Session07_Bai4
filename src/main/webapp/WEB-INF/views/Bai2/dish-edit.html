@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Sửa món ăn (Bài 2)</title>
+</head>
+<body>
+
+<h2>Sửa Thông Tin Món Ăn</h2>
+
+<form action="/bai2/merchant/dish/edit" method="POST" th:object="${dish}">
+
+    <div>
+        <label>Tên món ăn:</label>
+        <input type="text" th:field="" required />
+    </div>
+
+    <div>
+        <label>Nhóm món ăn:</label>
+        <select th:field="">
+            <option th:each="cat : ${categories}" th:value="${cat}" th:text="${cat}"></option>
+        </select>
+    </div>
+
+    <div>
+        <button type="submit">Cập nhật món</button>
+    </div>
+</form>
+
+</body>
+</html>

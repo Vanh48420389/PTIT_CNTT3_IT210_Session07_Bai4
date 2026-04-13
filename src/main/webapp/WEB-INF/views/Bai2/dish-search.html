@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Tìm kiếm món ăn (Bài 2)</title>
+</head>
+<body>
+
+<h2>Tìm Kiếm Món Ăn</h2>
+
+<form action="/bai2/merchant/dish/search" method="GET">
+
+    <div>
+        <label>Từ khóa (Tên món):</label>
+        <input type="text" name="keyword" placeholder="Nhập tên món..." />
+    </div>
+
+    <div>
+        <label>Lọc theo Nhóm:</label>
+        <select name="category">
+            <option value="">-- Tất cả các nhóm --</option>
+            <option th:each="cat : ${categories}" th:value="${cat}" th:text="${cat}"></option>
+        </select>
+    </div>
+
+    <div>
+        <button type="submit">Tìm kiếm</button>
+    </div>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 1 - Cập nhật Thông tin Nhà hàng</title>
+</head>
+<body>
+
+<h2>Hồ sơ Nhà hàng (Bài 1)</h2>
+
+<div th:if="${successMessage}">
+    <p th:text="${successMessage}"></p>
+</div>
+
+<form action="/bai1/merchant/update-profile" method="POST" th:object="${profile}">
+
+    <div>
+        <label>Tên cửa hàng:</label>
+        <input type="text" th:field="" required placeholder="Nhập tên quán..." />
+    </div>
+
+    <div>
+        <label>Số điện thoại:</label>
+        <input type="text" th:field="" required placeholder="09xx..." />
+    </div>
+
+    <div>
+        <label>Đang mở cửa (Active):</label>
+        <input type="checkbox" th:field="" />
+    </div>
+
+    <div>
+        <button type="submit">Lưu thông tin</button>
+    </div>
+</form>
+
+<div>
+    <hr>
+    <p>Sinh viên thực hiện: Đoàn Việt Anh - PTIT-HN-169</p>
+</div>
+
+</body>
+</html>
